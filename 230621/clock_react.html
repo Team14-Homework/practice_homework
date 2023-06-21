@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock_CDN</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="clock"></div>
+
+    <script type="text/babel">
+      const clock = document.getElementById("clock");
+
+      function reactClock() {
+        const time = new Date().toLocaleTimeString();
+        const realtime = (
+          <div style={{ textAlign: "center" }}>
+            <h1>실시간 시계</h1>
+            <h3>{time}</h3>
+          </div>
+        );
+
+        ReactDOM.render(realtime, clock);
+      }
+      setInterval(reactClock, 1000);
+    </script>
+  </body>
+</html>
