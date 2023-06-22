@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const Calculator = () => {
+        const [input, setInput] = React.useState("");
+        const [result, setResult] = React.useState("");
+
+        const handleButtonClick = (value) => {
+          setInput(input + value);
+          console.log(value);
+          console.log(input);
+        };
+
+        const handleCalculate = () => {
+          try {
+            setResult(eval(input));
+          } catch (error) {
+            setResult("Error");
+          }
+        };
+
+        const handleClear = () => {
+          setInput("");
+          setResult("");
+        };
+
+        return (
+          <div>
+            <input type="text" value={input} readOnly />
+            <div>
+              <button onClick={() => handleButtonClick("1")}>1</button>
+              <button onClick={() => handleButtonClick("2")}>2</button>
+              <button onClick={() => handleButtonClick("3")}>3</button>
+              <button onClick={() => handleButtonClick("+")}>+</button>
+            </div>
+            <div>
+              <button onClick={() => handleButtonClick("4")}>4</button>
+              <button onClick={() => handleButtonClick("5")}>5</button>
+              <button onClick={() => handleButtonClick("6")}>6</button>
+              <button onClick={() => handleButtonClick("-")}>-</button>
+            </div>
+            <div>
+              <button onClick={() => handleButtonClick("7")}>7</button>
+              <button onClick={() => handleButtonClick("8")}>8</button>
+              <button onClick={() => handleButtonClick("9")}>9</button>
+              <button onClick={() => handleButtonClick("*")}>X</button>
+            </div>
+            <button onClick={() => handleButtonClick("0")}>0</button>
+            <button onClick={() => handleButtonClick(".")}>.</button>
+            <button onClick={() => handleCalculate()}>=</button>
+            <button onClick={() => handleClear()}>Clear</button>
+            <p>Result: {result}</p>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Calculator />, root);
+    </script>
+  </body>
+</html>
