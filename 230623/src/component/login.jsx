@@ -19,6 +19,7 @@ function LoginForm() {
           placeholder="사용자 명을 입력하세요"
           onChange={(e) => setAdmin(e.target.value)}
         />
+        <br />
         <input
           type="password"
           name="password"
