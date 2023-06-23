@@ -1,7 +1,10 @@
+import LoginForm from "./login";
+
 function App() {
   return (
     <div>
       hello world
+      <LoginForm />
     </div>
   );
 }
