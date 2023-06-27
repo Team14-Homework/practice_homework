@@ -1,15 +1,14 @@
 import React from "react";
 import HomeFooter from "components/HomeFooter";
 import HomeHeader from "components/HomeHeader";
-import HomeMain from "components/HomeMain";
-import "styles/reset.css";
+import DetailMain from "components/DetailMain";
 import styles from "styles/layout.module.css";
 
-export default function Home() {
+export default function MovieDetail() {
   return (
     <div className={styles.layout}>
       <HomeHeader />
-      <HomeMain />
+      <DetailMain />
       <HomeFooter />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "styles/HomeFooter.module.css";
 
-export default function HomeFooter() {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
       <address className={styles.copyright}>

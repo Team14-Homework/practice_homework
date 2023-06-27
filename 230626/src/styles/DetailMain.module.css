@@ -1,0 +1,45 @@
+.detail_main {
+  width: 100vw;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.detail_wrapper {
+  min-width: 410px;
+  width: 90%;
+  color: white;
+  padding: 30px; 
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #3b3b3b;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.content_container {
+  min-width: 350px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-style: italic;
+  line-height: 1.5;
+}
+.detail_img {
+  width: 350px;
+  height: 525px;
+  border-radius: 10px;
+}
+.movieTitle {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.movieInfo span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: whitesmoke;
+}

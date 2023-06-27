@@ -1,9 +1,15 @@
 .header {
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 150px;
   padding: 30px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  background-color: rgba(20, 20, 20, 0.9);
+  z-index: 10;
 }
 .webName {
   width: 500px;
@@ -21,5 +27,5 @@
   box-sizing: border-box;
   outline: none;
   font-size: 1rem;
-  margin-left: auto; 
+  margin-left: auto;
 }
