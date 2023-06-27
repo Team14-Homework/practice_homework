@@ -1,0 +1,12 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.copyright {
+  padding: 30px;
+  color: lightgray;
+  font-style: italic;
+  text-align: right;
+  box-sizing: border-box;
+}
