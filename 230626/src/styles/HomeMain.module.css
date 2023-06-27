@@ -1,7 +1,7 @@
-body {
-  background-color: #141414;
+.home_main {
+  width: 100vw;
+  margin-top: 150px;
 }
-
 .slider_wrapper {
   position: relative;
   width: 100%;
@@ -17,6 +17,9 @@ body {
   display: flex;
   gap: 20px;
   overflow: hidden;
+}
+.movieInfoBox{
+  cursor: pointer;
 }
 .movie-img {
   border-radius: 10px;
