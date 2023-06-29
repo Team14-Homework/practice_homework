@@ -21,7 +21,11 @@ export default function SearchMain() {
         .then((response) => response.json())
         .then((json) => {
           setMoviesTitle(
-            json.data.movies.map((val) => [val.medium_cover_image, val.title, val.id])
+            json.data.movies.map((val) => [
+              val.medium_cover_image,
+              val.title,
+              val.id,
+            ])
           );
         });
     };
@@ -33,24 +37,26 @@ export default function SearchMain() {
   };
 
   return (
-    <section className={styles.filteredMovies_wrapper}>
-      {filteredMovies.map((val, idx) => (
-        <article
-          key={idx}
-          className={styles.movie_wrapper}
-          onClick={() => {
-            handleMovieClick(val[2]);
-          }}
-        >
-          <img
-            src={val[0]}
-            alt={`영화 ${val[1]} 포스터 이미지`}
-            className={styles.movie_img}
-            onError={(e) => (e.target.parentNode.style.display = "none")}
-          />
-          <p className={styles.title}>{val[1]}</p>
-        </article>
-      ))}
-    </section>
+    <main className={styles.seacrh_main}>
+      <section className={styles.filteredMovies_wrapper}>
+        {filteredMovies.map((val, idx) => (
+          <article
+            key={idx}
+            className={styles.movie_wrapper}
+            onClick={() => {
+              handleMovieClick(val[2]);
+            }}
+          >
+            <img
+              src={val[0]}
+              alt={`영화 ${val[1]} 포스터 이미지`}
+              className={styles.movie_img}
+              onError={(e) => (e.target.parentNode.style.display = "none")}
+            />
+            <p className={styles.title}>{val[1]}</p>
+          </article>
+        ))}
+      </section>
+    </main>
   );
 }
