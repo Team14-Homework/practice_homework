@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import SearchResults from "pages/SearchResults";
 import MovieDetail from "pages/MovieDetail";
+import SearchResults from "pages/SearchResults";
+import "common/reset.css";
+import "common/style.css";
 
 function App() {
   return (
