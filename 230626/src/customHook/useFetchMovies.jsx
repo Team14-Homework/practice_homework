@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 
-export const useFetchMovies = () => {
+export const useFetchMovies = (API_URL) => {
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState(null);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await fetch(
-          "https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year"
-        );
+        const response = await fetch(API_URL);
         const json = await response.json();
-        setMovies(json.data.movies);
+        setData(json.data);
         setLoading(false);
       } catch (error) {
         console.error("Failed to fetch movies:", error);
@@ -20,7 +18,7 @@ export const useFetchMovies = () => {
     };
 
     fetchMovies();
-  }, []);
+  }, [API_URL]);
 
-  return { movies, loading };
+  return { data, loading };
 };

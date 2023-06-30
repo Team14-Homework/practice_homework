@@ -7,6 +7,12 @@
   padding: 50px;
   box-sizing: border-box;
 }
+.loading_text {
+  font-size: 3rem;
+  font-style: italic;
+  line-height: 2;
+  margin: 0 auto;
+}
 .detail_wrapper {
   min-width: 410px;
   width: 90%;

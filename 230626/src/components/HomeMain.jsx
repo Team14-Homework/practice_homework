@@ -5,7 +5,9 @@ import styles from "styles/HomeMain.module.css";
 
 export default function HomeMain() {
   const navigate = useNavigate();
-  const { movies, loading } = useFetchMovies();
+  const API_URL =
+    "https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year";
+  const { data, loading } = useFetchMovies(API_URL);
   const [moviesInfo, setMoviesInfo] = useState([]);
   const [sliderIndex, setSliderIndex] = useState(0);
   const [sliderStyle, setSliderStyle] = useState({});
@@ -44,12 +46,11 @@ export default function HomeMain() {
   }, [sliderIndex, moviesInfo]);
 
   useEffect(() => {
-    if (movies) {
+    data &&
       setMoviesInfo(
-        movies.map((val) => [val.medium_cover_image, val.title, val.id])
+        data.movies.map((val) => [val.medium_cover_image, val.title, val.id])
       );
-    }
-  }, [movies]);
+  }, [data]);
 
   return (
     <main className={styles.home_main}>
